@@ -1,0 +1,15 @@
+# Dependências do projeto.
+# As 5 linhas pinadas abaixo foram verificadas no ambiente de desenvolvimento deste scaffold.
+# ATENÇÃO (exigência FAIR da disciplina): as 4 últimas linhas ainda NÃO têm versão fixada.
+# No seu .venv, depois de `pip install -r requirements.txt`, rode:
+#     pip freeze > requirements.txt
+# e confira que TODAS as linhas ficaram no formato pacote==versão.
+pandas==3.0.6
+numpy==2.5.4
+matplotlib==3.11.2
+seaborn==0.13.2
+requests==2.34.2
+pyarrow
+plotly
+gdown
+pytest
