@@ -7,14 +7,14 @@
 ![Dados e texto: CC BY 4.0](https://img.shields.io/badge/dados%20e%20texto-CC%20BY%204.0-lightgrey)
 ![FAIR](https://img.shields.io/badge/princ%C3%ADpios-FAIR-orange)
 
-**Artigo (GitHub Pages):** https://[USUARIO].github.io/[REPOSITORIO]/
+**Artigo (GitHub Pages):** https://github.com/PedroHenriquesDev/An-lise-de-Dados-e-Indicadores-P-blicos/tree/main
 
 | | |
 |---|---|
-| **Autores** | [Nome 1], [Nome 2], [Nome 3] |
-| **Instituição / Curso** | [Instituição], Bacharelado em Sistemas de Informação |
-| **Disciplina / Semestre** | Linguagem de Programação (Análise e Visualização de Dados com Python), 6º período, 2026/[1 ou 2] |
-| **Docente** | [Nome do professor] |
+| **Autores** | Pedro Henriques Silva, Carlos Eduardo Julio da Costa|
+| **Instituição / Curso** | Unilasalle RJ, Bacharelado em Sistemas de Informação |
+| **Disciplina / Semestre** | Linguagem de Programação (Análise e Visualização de Dados com Python), 6º período, 2026/2 |
+| **Docente** | Alexandre Louzada |
 
 ## Resumo executivo
 
