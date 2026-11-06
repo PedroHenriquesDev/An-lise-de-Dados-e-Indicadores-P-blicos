@@ -23,9 +23,9 @@ O método consiste em um pipeline ETL em Python (leitura com detecção de codif
 
 **Perguntas de pesquisa**
 
-- **RQ1:** [ex.: como a gravidade dos acidentes varia por horário, dia da semana e condição meteorológica?]
-- **RQ2:** [ex.: quais causas concentram mais mortes e isso difere entre trechos urbanos e rurais?]
-- **RQ3:** [ex.: quais trechos concentram mais acidentes e como evoluíram entre 2019 e 2025?]
+- **RQ1:** Como a gravidade dos acidentes varia por horário, dia da semana e condição meteorológica?
+- **RQ2:** Quais causas concentram mais mortes e isso difere entre trechos urbanos e rurais?
+- **RQ3:** Quais trechos concentram mais acidentes e como evoluíram entre 2019 e 2025?
 
 **Palavras-chave:** acidentes de trânsito; rodovias federais; Polícia Rodoviária Federal; dados abertos; análise exploratória; FAIR
 
