@@ -70,13 +70,13 @@ python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
-# 2. Baixar os dados brutos (sem login)
+# 2. Baixar os dados brutos
 python -m src.download --anos 2019 2020 2021 2022 2023 2024 2025
 
-# 3. Rodar o ETL (exemplo: só o Rio de Janeiro)
+# 3. Rodar o ETL
 python -m src.etl --input data/raw --uf RJ
 
-# 4. (Opcional) Testes
+# 4. Testes
 python -m pytest -q
 
 # 5. Abrir a análise
