@@ -18,8 +18,8 @@
 
 ## Resumo executivo
 
-[Escreva 4 a 6 linhas: contexto (acidentes em rodovias federais), dados (BAT da PRF, período e recorte),
-método (pipeline ETL em Python + análise exploratória) e principais achados.]
+Acidentes em rodovias federais representam um problema relevante de saúde pública e de gestão da infraestrutura viária no Brasil. Este trabalho analisa os dados abertos do Boletim de Acidente de Trânsito (BAT) da Polícia Rodoviária Federal (PRF), com acidentes agrupados por ocorrência, no período de 2019 a 2025, com recorte para o estado do Rio de Janeiro (RJ). 
+O método consiste em um pipeline ETL em Python (leitura com detecção de codificação, tratamento de tipos, métricas derivadas, rejeição documentada de registros inválidos e relatório de qualidade), seguido de análise exploratória em notebook.
 
 **Perguntas de pesquisa**
 
