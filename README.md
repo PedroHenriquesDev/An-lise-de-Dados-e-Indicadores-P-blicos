@@ -34,8 +34,8 @@ O método consiste em um pipeline ETL em Python (leitura com detecção de codif
 - **Origem:** Polícia Rodoviária Federal (PRF), Boletim de Acidente de Trânsito (BAT), acidentes agrupados por ocorrência.
 - **Link perene:** https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/dados-abertos-da-prf
 - **Dicionário oficial:** https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/dicionario-acidentes
-- **Data de acesso:** __/__/2026
-- **Recorte usado:** [anos e UF, ex.: 2019 a 2025, RJ]
+- **Data de acesso:** 06/11/2026
+- **Recorte usado:** 2019 a 2025, UF = RJ
 
 ## Estrutura do repositório
 
@@ -64,8 +64,8 @@ O método consiste em um pipeline ETL em Python (leitura com detecção de codif
 
 ```bash
 # 1. Clonar e criar ambiente
-git clone https://github.com/[USUARIO]/[REPOSITORIO].git
-cd [REPOSITORIO]
+git clone https://github.com/PedroHenriquesDev/An-lise-de-Dados-e-Indicadores-P-blicos.git
+cd An-lise-de-Dados-e-Indicadores-P-blicos
 python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
@@ -115,4 +115,4 @@ Detalhes e regras em [`data/data_dictionary.md`](data/data_dictionary.md).
 
 Sugestão de citação:
 
-> [SOBRENOME, Nome et al.]. *[Título do projeto]*. 2026. Repositório GitHub. Disponível em: https://github.com/[USUARIO]/[REPOSITORIO].
+> SILVA, Pedro Henriques; COSTA, Carlos Eduardo Julio da. Acidentes em Rodovias Federais (PRF). 2026. Repositório GitHub. Disponível em: https://github.com/PedroHenriquesDev/An-lise-de-Dados-e-Indicadores-P-blicos. Acesso em: 6 nov. 2026.
