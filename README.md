@@ -113,4 +113,4 @@ Detalhes e regras em [`data/data_dictionary.md`](data/data_dictionary.md).
 - Código: [MIT](LICENSE).
 - Dados processados, dicionário e texto: [CC BY 4.0](LICENSE-DATA.md). Os dados originais são da PRF; veja a nota na licença.
 
-> SILVA, Pedro Henriques; COSTA, Carlos Eduardo Julio da. Acidentes em Rodovias Federais (PRF). 2026. Repositório GitHub. Disponível em: https://github.com/PedroHenriquesDev/An-lise-de-Dados-e-Indicadores-P-blicos. Acesso em: 6 nov. 2026.
+> SILVA, Pedro Henrique; COSTA, Carlos Eduardo Julio da. Acidentes em Rodovias Federais (PRF). 2026. Repositório GitHub. Disponível em: https://github.com/PedroHenriquesDev/An-lise-de-Dados-e-Indicadores-P-blicos. Acesso em: 6 nov. 2026.
