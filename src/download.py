@@ -40,11 +40,20 @@ def download(years: list[int], dest: Path = RAW_DIR) -> list[str]:
     for year in years:
         if year not in GDRIVE_IDS_OCORRENCIA:
             raise KeyError(f"Ano {year} não configurado em GDRIVE_IDS_OCORRENCIA")
-        # output terminando em '/' preserva o nome original do arquivo no Drive
-        out = gdown.download(id=GDRIVE_IDS_OCORRENCIA[year], output=str(dest) + "/", quiet=False)
-        if out is None:
-            raise RuntimeError(f"Falha ao baixar {year}. Veja o aviso no topo deste arquivo.")
-        saved.append(out)
+        # Nome determinístico facilita a descoberta dos arquivos pelo ETL e
+        # evita depender do nome interno atribuído no Google Drive.
+        target = dest / f"datatran{year}.zip"
+        out = gdown.download(
+            id=GDRIVE_IDS_OCORRENCIA[year],
+            output=str(target),
+            quiet=False,
+        )
+        if out is None or not target.exists() or target.stat().st_size == 0:
+            raise RuntimeError(
+                f"Falha ao baixar {year}. Confira o link na página oficial da PRF "
+                "e tente novamente."
+            )
+        saved.append(str(target))
     return saved
 
 
