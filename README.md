@@ -1,13 +1,13 @@
-# An-lise-de-Dados-e-Indicadores-P-blicos
+# Análise-de-Dados-e-Indicadores-Públicos
 
-# [TÍTULO DO PROJETO]: Acidentes em Rodovias Federais (PRF)
+# Acidentes em Rodovias Federais (PRF)
 
 ![Python](https://img.shields.io/badge/python-3.12-blue)
 ![Código: MIT](https://img.shields.io/badge/c%C3%B3digo-MIT-green)
 ![Dados e texto: CC BY 4.0](https://img.shields.io/badge/dados%20e%20texto-CC%20BY%204.0-lightgrey)
 ![FAIR](https://img.shields.io/badge/princ%C3%ADpios-FAIR-orange)
 
-**Artigo (GitHub Pages):** https://github.com/PedroHenriquesDev/An-lise-de-Dados-e-Indicadores-P-blicos/tree/main
+**Artigo (GitHub Pages):** https://github.com/PedroHenriquesDev/Análise-de-Dados-e-Indicadores-Públicos/tree/main
 
 | | |
 |---|---|
@@ -112,7 +112,5 @@ Detalhes e regras em [`data/data_dictionary.md`](data/data_dictionary.md).
 
 - Código: [MIT](LICENSE).
 - Dados processados, dicionário e texto: [CC BY 4.0](LICENSE-DATA.md). Os dados originais são da PRF; veja a nota na licença.
-
-Sugestão de citação:
 
 > SILVA, Pedro Henriques; COSTA, Carlos Eduardo Julio da. Acidentes em Rodovias Federais (PRF). 2026. Repositório GitHub. Disponível em: https://github.com/PedroHenriquesDev/An-lise-de-Dados-e-Indicadores-P-blicos. Acesso em: 6 nov. 2026.
