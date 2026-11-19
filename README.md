@@ -7,7 +7,8 @@
 ![Dados e texto: CC BY 4.0](https://img.shields.io/badge/dados%20e%20texto-CC%20BY%204.0-lightgrey)
 ![FAIR](https://img.shields.io/badge/princ%C3%ADpios-FAIR-orange)
 
-**Artigo (GitHub Pages):** https://github.com/PedroHenriquesDev/Análise-de-Dados-e-Indicadores-Públicos/tree/main
+**Artigo (GitHub Pages):** após habilitar o workflow e concluir o primeiro deploy, o endereço ficará disponível em
+`https://pedrohenriquesdev.github.io/An-lise-de-Dados-e-Indicadores-P-blicos/`.
 
 | | |
 |---|---|
@@ -19,7 +20,7 @@
 ## Resumo executivo
 
 Acidentes em rodovias federais representam um problema relevante de saúde pública e de gestão da infraestrutura viária no Brasil. Este trabalho analisa os dados abertos do Boletim de Acidente de Trânsito (BAT) da Polícia Rodoviária Federal (PRF), com acidentes agrupados por ocorrência, no período de 2019 a 2025, com recorte para o estado do Rio de Janeiro (RJ). 
-O método consiste em um pipeline ETL em Python (leitura com detecção de codificação, tratamento de tipos, métricas derivadas, rejeição documentada de registros inválidos e relatório de qualidade), seguido de análise exploratória em notebook.
+O método consiste em um pipeline ETL em Python (leitura com detecção de codificação, tratamento de tipos, métricas derivadas, rejeição documentada de registros inválidos e relatório de qualidade), seguido de análise exploratória e geração automatizada do artigo HTML e das visualizações.
 
 **Perguntas de pesquisa**
 
@@ -34,7 +35,7 @@ O método consiste em um pipeline ETL em Python (leitura com detecção de codif
 - **Origem:** Polícia Rodoviária Federal (PRF), Boletim de Acidente de Trânsito (BAT), acidentes agrupados por ocorrência.
 - **Link perene:** https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/dados-abertos-da-prf
 - **Dicionário oficial:** https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/dicionario-acidentes
-- **Data de acesso:** 06/11/2026
+- **Data de consulta da fonte:** 19/11/2026
 - **Recorte usado:** 2019 a 2025, UF = RJ
 
 ## Estrutura do repositório
@@ -44,23 +45,27 @@ O método consiste em um pipeline ETL em Python (leitura com detecção de codif
 ├── README.md
 ├── LICENSE                    # MIT (código)
 ├── LICENSE-DATA.md            # CC BY 4.0 (dados processados e texto) e nota sobre a fonte
-├── requirements.txt           # dependências com versões fixadas
+├── requirements.txt           # dependências do projeto
 ├── data/
 │   ├── raw/                   # CSVs originais (não versionados; script de download)
 │   ├── processed/             # saída do ETL (Parquet + rejeitados + relatório)
 │   └── data_dictionary.md     # dicionário de variáveis
-├── notebooks/
-│   └── analise_exploratoria.ipynb
 ├── src/
 │   ├── etl.py                 # limpeza, tipos, métricas derivadas, relatório de qualidade
-│   └── download.py            # download dos CSVs da fonte
+│   ├── download.py            # download dos CSVs da fonte
+│   └── build_article.py       # gera artigo HTML e gráficos da base processada
 ├── tests/test_etl.py          # testes do ETL com dados sintéticos
-└── docs/                      # artigo HTML (GitHub Pages)
-    ├── index.html
-    └── assets/
+├── docs/                      # site do artigo (GitHub Pages)
+│   ├── index.html              # página inicial / artigo gerado
+│   └── assets/                 # gráficos gerados
+└── .github/workflows/pages.yml # publicação automática no GitHub Pages
 ```
 
 ## Como reproduzir
+
+Os arquivos oficiais são publicados pela PRF em ZIP contendo CSV. Para este estudo, o script usa exclusivamente a opção **Acidentes agrupados por ocorrência** para cada ano de 2019 a 2025 (uma linha por ocorrência), e não as bases agrupadas por pessoa. Os identificadores de download foram conferidos com os links da página oficial consultada em 19/11/2026.
+
+A geração e publicação completas também podem ser executadas pelo GitHub Actions: abra a aba **Actions**, selecione **Gerar artigo e publicar no GitHub Pages** e clique em **Run workflow**. O processo baixa as bases, roda os testes, executa o ETL para RJ, gera o artigo e publica a pasta `docs/`. O download depende de os links públicos do Google Drive da PRF permanecerem acessíveis.
 
 ```bash
 # 1. Clonar e criar ambiente
@@ -79,8 +84,8 @@ python -m src.etl --input data/raw --uf RJ
 # 4. Testes
 python -m pytest -q
 
-# 5. Abrir a análise
-jupyter lab notebooks/analise_exploratoria.ipynb
+# 5. Gerar artigo HTML e gráficos reais para o GitHub Pages
+python -m src.build_article
 ```
 
 Saídas do ETL em `data/processed/`:
@@ -104,13 +109,33 @@ Detalhes e regras em [`data/data_dictionary.md`](data/data_dictionary.md).
 | Princípio | Como é atendido |
 |---|---|
 | **Findable** | README com resumo, palavras-chave, autoria e link perene da fonte |
-| **Accessible** | Repositório público; download sem credenciais; artigo em GitHub Pages |
+| **Accessible** | Repositório público; dados brutos obtidos no portal da PRF; publicação Pages configurada por workflow |
 | **Interoperable** | Dicionário de dados; saída em Parquet (aberto) |
-| **Reusable** | Licença MIT (código) e CC BY 4.0 (dados e texto); `requirements.txt` com versões fixadas |
+| **Reusable** | Licença MIT (código), CC BY 4.0 (texto e derivados), dicionário e relatório de rastreabilidade; versões das dependências ainda precisam ser totalmente fixadas |
 
 ## Licenças e citação
 
 - Código: [MIT](LICENSE).
 - Dados processados, dicionário e texto: [CC BY 4.0](LICENSE-DATA.md). Os dados originais são da PRF; veja a nota na licença.
 
-> SILVA, Pedro Henrique; COSTA, Carlos Eduardo Julio da. Acidentes em Rodovias Federais (PRF). 2026. Repositório GitHub. Disponível em: https://github.com/PedroHenriquesDev/An-lise-de-Dados-e-Indicadores-P-blicos. Acesso em: 6 nov. 2026.
+> SILVA, Pedro Henriques; COSTA, Carlos Eduardo Julio da. Acidentes em Rodovias Federais (PRF). 2026. Repositório GitHub. Disponível em: https://github.com/PedroHenriquesDev/An-lise-de-Dados-e-Indicadores-P-blicos. Acesso em: 6 nov. 2026.
+
+
+## Publicação do artigo (GitHub Pages)
+
+O workflow `.github/workflows/pages.yml` publica automaticamente a pasta `docs/` quando há
+alterações nela na branch `main` ou `master`. No GitHub, abra **Settings → Pages** e selecione
+**GitHub Actions** como origem de publicação. Depois do primeiro deploy, confira a URL exibida
+na aba **Actions** ou em **Settings → Pages**.
+
+O arquivo `docs/index.html` incluído inicialmente é uma página de orientação. Para gerar o
+artigo científico com indicadores e gráficos calculados a partir dos dados reais, execute
+`python -m src.build_article` depois do download e do ETL. O script lê `data/processed/acidentes.parquet`
+(ou `acidentes.csv.gz`) e grava as figuras em `docs/assets/`.
+
+**Atenção:** o ZIP distribuído neste estágio não inclui os CSVs da PRF, a base processada nem
+o notebook de análise exploratória. Portanto, os gráficos e números finais dependem da execução
+dos comandos de reprodução com os dados oficiais.
+
+
+**Pendência de homologação:** antes da entrega, validar o dicionário com a documentação oficial, completar o pinning de todas as dependências em `requirements.txt` (inclusive `pyarrow`, `plotly`, `gdown` e `pytest`) no ambiente efetivamente usado e executar o fluxo completo com os arquivos oficiais.
