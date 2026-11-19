@@ -10,8 +10,7 @@
 **Artigo (GitHub Pages):** o endereço ficará disponível em
 `https://pedrohenriquesdev.github.io/An-lise-de-Dados-e-Indicadores-P-blicos/`.
 
-**Link do site HTML** o endereço ficará disponível em
-`https://pedrohenriquesdev.github.io/An-lise-de-Dados-e-Indicadores-P-blicos/`.
+**Link do site HTML**
 
 | | |
 |---|---|
@@ -40,6 +39,7 @@ O método consiste em um pipeline ETL em Python (leitura com detecção de codif
 - **Dicionário oficial:** https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/dicionario-acidentes
 - **Data de consulta da fonte:** 19/11/2026
 - **Recorte usado:** 2019 a 2025, UF = RJ
+- **Link do site HTML** https://pedrohenriquesdev.github.io/An-lise-de-Dados-e-Indicadores-P-blicos/
 
 ## Estrutura do repositório
 
