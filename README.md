@@ -7,7 +7,7 @@
 ![Dados e texto: CC BY 4.0](https://img.shields.io/badge/dados%20e%20texto-CC%20BY%204.0-lightgrey)
 ![FAIR](https://img.shields.io/badge/princ%C3%ADpios-FAIR-orange)
 
-**Artigo (GitHub Pages):** após habilitar o workflow e concluir o primeiro deploy, o endereço ficará disponível em
+**Artigo (GitHub Pages):** o endereço ficará disponível em
 `https://pedrohenriquesdev.github.io/An-lise-de-Dados-e-Indicadores-P-blicos/`.
 
 | | |
@@ -118,24 +118,4 @@ Detalhes e regras em [`data/data_dictionary.md`](data/data_dictionary.md).
 - Código: [MIT](LICENSE).
 - Dados processados, dicionário e texto: [CC BY 4.0](LICENSE-DATA.md). Os dados originais são da PRF; veja a nota na licença.
 
-> SILVA, Pedro Henriques; COSTA, Carlos Eduardo Julio da. Acidentes em Rodovias Federais (PRF). 2026. Repositório GitHub. Disponível em: https://github.com/PedroHenriquesDev/An-lise-de-Dados-e-Indicadores-P-blicos. Acesso em: 6 nov. 2026.
-
-
-## Publicação do artigo (GitHub Pages)
-
-O workflow `.github/workflows/pages.yml` publica automaticamente a pasta `docs/` quando há
-alterações nela na branch `main` ou `master`. No GitHub, abra **Settings → Pages** e selecione
-**GitHub Actions** como origem de publicação. Depois do primeiro deploy, confira a URL exibida
-na aba **Actions** ou em **Settings → Pages**.
-
-O arquivo `docs/index.html` incluído inicialmente é uma página de orientação. Para gerar o
-artigo científico com indicadores e gráficos calculados a partir dos dados reais, execute
-`python -m src.build_article` depois do download e do ETL. O script lê `data/processed/acidentes.parquet`
-(ou `acidentes.csv.gz`) e grava as figuras em `docs/assets/`.
-
-**Atenção:** o ZIP distribuído neste estágio não inclui os CSVs da PRF, a base processada nem
-o notebook de análise exploratória. Portanto, os gráficos e números finais dependem da execução
-dos comandos de reprodução com os dados oficiais.
-
-
-**Pendência de homologação:** antes da entrega, validar o dicionário com a documentação oficial, completar o pinning de todas as dependências em `requirements.txt` (inclusive `pyarrow`, `plotly`, `gdown` e `pytest`) no ambiente efetivamente usado e executar o fluxo completo com os arquivos oficiais.
+> SILVA, Pedro Henrique; COSTA, Carlos Eduardo Julio da. Acidentes em Rodovias Federais (PRF). 2026. Repositório GitHub. Disponível em: https://github.com/PedroHenriquesDev/An-lise-de-Dados-e-Indicadores-P-blicos. Acesso em: 6 nov. 2026.
